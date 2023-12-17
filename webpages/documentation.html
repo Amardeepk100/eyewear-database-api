@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="documentation.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/papercolor-light.min.css">
+    </head>
+    <body>
+        <!--nav start-->
+        <nav class="navbar bg-body-tertiary fixed-top">
+            <div class="container py-3">
+                <div class="d-flex flex-column flex-md-row justify-content-start align-self-center" style="width: 50%;">
+                    <div class="align-self-start col-6 col-md-2">
+                        <a class="m-0 d-flex navbar-brand justify-content-center" href="#">
+                            <img class="img-fluid" src="./assets/logo2.png" alt="logo">
+                        </a>
+                    </div>
+                    <div class="align-self-center">
+                        <p class="m-0 fs-4 d-none d-sm-block ">Eyewear Database API</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-end align-self-center" style="width: 50%;">
+                    <a class="fw-semibold px-3 align-self-center" href="index.html">
+                        <p class="m-0 fs-4 d-none d-sm-block">Home</p>
+                        <p class="m-0 fs-6 d-sm-none">Home</p>
+                    </a>
+                    <a class="align-self-center" href="https://github.com/Amardeepk100/eyewear-database-api">
+                        <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github">
+                            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!--nav end-->
+
+        <!--main content start-->
+        <div class="container-fluid nav-pad">
+            <div class="col-12">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                        <p class="fw-bold fs-2 my-2">Introduction</p>
+                        <hr class="border border-secondary border-1 opacity-50">
+                        <p class="fw-bold fs-5 mb-0">What is this?</p>
+                        <p class="fs-6 mb-0">Eyewear Database API is a REST API based on my previous project <a class="text-primary" href="https://github.com/Amardeepk100/eyewear-website">Elite Eyewear</a>. The Eyewear Database API contains data of numerous eyewear products from the previous project.</p>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                        <p class="fw-bold fs-2 mb-2">Try it now!</p>
+                        <hr class="border border-secondary border-1 opacity-50">
+                        <div class="input-group mb-2">
+                            <span class="py-2 border border-end-0 border-dark-subtle input-group-text bg-secondary-subtle text-secondary text-start" style="max-width: 55%;" >
+                                <span class="fs-7 d-none d-sm-block" >http://localhost:5000/</span>
+                                <span class="fs-7 d-sm-none" >http://localhost:5000/<br class="d-md-none"></span>
+                            </span>
+                            <input class="py-2 fs-7 border border-end-0 border-dark-subtle form-control" type="text" placeholder="products?_id=653aecf061a11eecb45b17ab" id="try-out-url">
+                            <span class="py-2 px-3 fs-7 border border-start-0 border-dark-subtle input-group-text bg-primary text-white" style="max-width: 20%;" onClick="try_out()">Get</span>
+                        </div>
+                        <div class="mt-3 border border-dark-subtle code-container">
+                            <div>
+                                <pre class="m-0 fs-7"><code id="try-code" class="language-json"></code></pre>
+                            </div>
+                            <div onclick="copy_toast()" class="copy-url p-2" data-clipboard-target="#try-code" style="max-height: fit-content;" data-clipboard-target="#try-code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                        <p class="fw-bold fs-2 mb-2">Root URL</p>
+                        <hr class="border border-secondary border-1 opacity-50">
+                        <p class="fs-6">This is the root url. All requests are GET requests and are sent over HTTPS.                        </p>
+                        <div class="d-flex flex-row justify-content-between align-items-center code-box border border-secondary p-2 mt-3 border-1">
+                            <div id="root-url">http://localhost:5000/</div>
+                            <div onclick="copy_toast()" class="copy-result" data-clipboard-target="#root-url"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-5 mb-2">
+                    <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                        <p class="fw-bold fs-2 mb-2">Limiting and Skipping</p>
+                        <hr class="border border-secondary border-1 opacity-50">
+                        <p class="fs-6">All endpoints support the <span class="highlighter">limit</span> and <span class="highlighter">skip</span> parameters. You can use this parameters together or separately. The default value of limit is 5 if the value is not provided by the user.</p>
+                        <div class="d-flex flex-row justify-content-between align-items-center code-box border border-secondary p-2 mt-3 border-1">
+                            <div id="limit-skip">http://localhost:5000/products?limit=1&skip=5</div>
+                            <div onclick="copy_toast()" class="copy-result" data-clipboard-target="#limit-skip"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg></div>
+                        </div>
+                        <div class="mt-3 border border-dark-subtle code-container">
+                            <div>
+                                <pre class="m-0 fs-7"><code id="limit-skip-code" class="language-json"></code></pre>
+                            </div>
+                            <div onclick="copy_toast()" class="copy-url p-2" data-clipboard-target="#limit-skip-code" style="max-height: fit-content;" data-clipboard-target="#try-code">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-5 mb-2">
+                        <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                            <p class="fw-bold fs-2 mb-2">Filtering Endpoints</p>
+                            <hr class="border border-secondary border-1 opacity-50">
+                            <p class="fs-6">All endpoints support filtering on any available <span class="highlighter">key</span> within their schema.</p>
+                            <div class="d-flex flex-row justify-content-between align-items-center code-box border border-secondary p-2 mt-3 border-1">
+                                <div id="filters">http://localhost:5000/products?product_type=Eyeglasses&<br class="d-md-none">frame_shape=Cat Eye</div>
+                                <div onclick="copy_toast()" class="copy-result" data-clipboard-target="#filters"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg></div>
+                            </div>
+                            <div class="mt-3 border border-dark-subtle code-container">
+                                <div>
+                                    <pre class="m-0 fs-7"><code id="filters-code" class="language-json"></code></pre>
+                                </div>
+                                <div onclick="copy_toast()" class="copy-url p-2" data-clipboard-target="#filters-code" style="max-height: fit-content;" data-clipboard-target="#try-code">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-5 mb-2">
+                        <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                            <p class="fw-bold fs-2 mb-2">Filtering By Price</p>
+                            <hr class="border border-secondary border-1 opacity-50">
+                            <p class="fs-6">Products can be filter by price using <span class="highlighter">minPrice</span> and <span class="highlighter">maxPrice</span> parameters. This parameters can also be used with other endpoints.</p>
+                            <div class="d-flex flex-row justify-content-between align-items-center code-box border border-secondary p-2 mt-3 border-1">
+                                <div id="price">http://localhost:5000/products?product_type=Eyeglasses&<br class="d-md-none">minPrice=1000&maxPrice=2000</div>
+                                <div onclick="copy_toast()" class="copy-result" data-clipboard-target="#price"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg></div>
+                            </div>
+                            <div class="mt-3 border border-dark-subtle code-container">
+                                <div>
+                                    <pre class="m-0 fs-7"><code id="price-code" class="language-json"></code></pre>
+                                </div>
+                                <div onclick="copy_toast()" class="copy-url p-2" data-clipboard-target="#price-code" style="max-height: fit-content;" data-clipboard-target="#try-code">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-5 mb-2">
+                        <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                            <p class="fw-bold fs-2 mb-2">Search</p>
+                            <hr class="border border-secondary border-1 opacity-50">
+                            <p class="fs-6">Products can be searched across multiple fields using any given value with the help of <span class="highlighter">search</span> endpoint.</p>
+                            <div class="d-flex flex-row justify-content-between align-items-center code-box border border-secondary p-2 mt-3 border-1">
+                                <div id="search">http://localhost:5000/products/<br class="d-md-none">search?q=geometric</div>
+                                <div onclick="copy_toast()" class="copy-result" data-clipboard-target="#search"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg></div>
+                            </div>
+                            <div class="mt-3 border border-dark-subtle code-container">
+                                <div>
+                                    <pre class="m-0 fs-7"><code id="search-code" class="language-json"></code></pre>
+                                </div>
+                                <div onclick="copy_toast()" class="copy-url p-2" data-clipboard-target="#search-code" style="max-height: fit-content;" data-clipboard-target="#try-code">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M13.508 11.504l.93-2.494 2.998 6.268-6.31 2.779.894-2.478s-8.271-4.205-7.924-11.58c2.716 5.939 9.412 7.505 9.412 7.505zm7.492-9.504v-2h-21v21h2v-19h19zm-14.633 2c.441.757.958 1.422 1.521 2h14.112v16h-16v-8.548c-.713-.752-1.4-1.615-2-2.576v13.124h20v-20h-17.633z"/></svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center mt-5 mb-2">
+                        <div class="col-lg-7 col-md-9 col-sm-12" style="background-color:rgba(255, 255, 255)">
+                            <p class="fw-bold fs-2 mb-2">Product Schema</p>
+                            <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Key</th>
+                                    <th scope="col">Type</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>_id</td>
+                                        <td>ObjectId</td>
+                                    </tr>
+                                    <tr>
+                                        <td>brand</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>model_no</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>product_type</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>product_color</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>product_price</td>
+                                        <td>Number</td>
+                                    </tr>
+                                    <tr>
+                                        <td>gender</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>frame_type</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>frame_shape</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>material</td>
+                                        <td>String</td>
+                                    </tr>
+                                    <tr>
+                                        <td>image_paths</td>
+                                        <td>Array</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--main content end-->
+        
+        <!--credit start-->
+        <div class="my-5 d-flex flex-column justify-content-center align-items-center">
+        <a href="https://github.com/Amardeepk100">
+            <svg class="mt-5" height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" class="octicon octicon-mark-github">
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+            </svg>
+        </a>
+            <div class="fw-medium fs-4 mt-1 text-secondary">
+                Created by Amardeep Kashyap.
+            </div>
+        </div>
+        <!--credit end-->
+
+        <!--toast start-->
+        <div class="toast-container position-fixed top-0 end-0 p-3">
+            <div id="liveToast" class="toast align-items-center text-white bg-opacity-75 bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="fs-6 toast-body">
+                        Successfully copied.
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <!--toast end-->
+
+        <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
+        <script src="documentation.js"></script>
+    </body>
+</html>
